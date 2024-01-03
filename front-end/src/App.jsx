@@ -1,34 +1,57 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import { HiMiniArrowUpRight } from "react-icons/hi2";
+import { FiGithub } from "react-icons/fi";
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <>
+  <div>
+
+    <header className="header">
       <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+          <div>
+            <h5>
+              <a href="#section-easygencert">easyGenCert</a>
+            </h5>
+            <a href="#section-about">Sobre</a>
+          </div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    </header>
+
+    <main>
+      <section id="section-easygencert">
+        <div className="section-easygencert-grid">
+          <div className="cta">
+            <h1>EASYGENCERT</h1>
+            <p>Gere certificados de maneira Fácil com apenas alguns cliques!</p>
+            <button>GERAR AGORA</button>
+          </div>
+          <img src="format.svg" alt="" />
+        </div>
+      </section>
+      <section id="section-about">
+        <div className="section-about-grid">
+          <h2>Sobre</h2>
+          <img src="easyGenCert.svg" alt="Imagem easyGenCert" />
+          <div className='project-info'>
+            <h3>Projeto easyGenCert</h3>
+            <p>easyGenCert é um projeto aberto que possibilita gerar certificados genéricos a partir de informações fornecidas pelo usuário.</p>
+
+            <h6>Criadores:</h6>
+            <div className="creators">
+              <a href="#" target="_blank" rel="noopener noreferrer">David <HiMiniArrowUpRight /></a>
+              <a href="https://www.linkedin.com/in/wandersonst7" target="_blank" rel="noopener noreferrer">Wanderson <HiMiniArrowUpRight /></a>
+            </div>
+
+            <div>
+              <a id="link-repository" href="https://github.com/wandersonst7/easyGenCert.git" target="_blank" rel="noopener noreferrer">REPOSITÓRIO <FiGithub /> </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+  </div>
   )
 }
 

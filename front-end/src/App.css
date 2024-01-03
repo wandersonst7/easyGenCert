@@ -1,42 +1,298 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+/* header */
+.header{
+    background-color: #F7EBE8;
+    padding-top: 4rem;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.header > div {
+    max-width: 1200px; 
+    margin: 0 auto;
+    position: relative; 
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.header > div > div{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    gap: 44px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.header a {
+    color: #23304A;
 }
 
-.card {
-  padding: 2em;
+/* section easygencert*/
+#section-easygencert{
+    min-height: 100vh;
+    background-color: #F7EBE8;
+    display: flex;
+    align-items: center;
 }
 
-.read-the-docs {
-  color: #888;
+.section-easygencert-grid{
+    max-width: fit-content;
+    margin: 0 auto;
+    display: grid;
+    grid-template-areas:
+    "cta format";
+    column-gap: 64px;
+}
+
+.cta{
+    grid-area: cta;
+}
+
+.cta h1{
+    font-family: 'Rubik Mono One', monospace;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 9.6px;
+    color: #23304A;
+    margin-bottom: 34px;
+}
+
+.cta p {
+    font-size: 1.5em;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #23304A;
+    max-width: 430px;
+    margin-bottom: 44px;
+}
+
+.cta button {
+    font-size: 2.125em;
+    background: linear-gradient(95deg, #690EA0 0%, #E55381 100%);
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    border-radius: 100px;
+    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.25);
+    padding: 1.5rem 3rem;
+    cursor: pointer;
+    opacity: .9;
+    transition: .5s;
+}
+
+.cta button:hover{
+    opacity: 1;
+}
+
+#section-easygencert img{
+    grid-area: format;
+    width: 100%;
+    max-width: 500px;
+}
+
+/* section about */
+#section-about{
+    background-color: #fff;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.section-about-grid{
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-areas: 
+    "title title"
+    "image projectinfo";
+    column-gap: 44px;
+}
+
+#section-about h2{
+    grid-area: title;
+    text-align: center;
+    color: #23304A;
+    margin-bottom: 64px;
+}
+
+#section-about img {
+    grid-area: image;
+    width: 100%;
+    max-width: 500px;
+    border-radius: 8px;
+    box-shadow: 4px 4px 16px 0px rgba(0, 0, 0, 0.25);
+}
+
+.project-info{
+    grid-area: projectinfo;
+    max-width: 500px;
+}
+
+.project-info h3{
+    color: #23304A;
+    margin-bottom: 24px;
+}
+
+.project-info p {
+    color: #23304A;
+    margin-bottom: 34px;
+}
+
+.project-info h6 {
+    color: #23304A;
+    margin-bottom: 16px;
+}
+
+.creators{
+    margin-bottom: 34px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.creators a{
+    display: block;
+    color: #23304A;
+}
+
+.creators a:hover{
+    text-decoration: underline;
+}
+
+#link-repository{
+    width: fit-content;
+    padding: 1em 2em;
+    border-radius: 100px;
+    color: #fff;
+    background: linear-gradient(93deg, #BF2858 0%, #690EA0 99.65%);
+    font-weight: bold;
+    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.25);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    opacity: .9;
+    transition: .5s;
+}
+
+#link-repository:hover{
+    opacity: 1;
+}
+
+@media(max-width: 992px){
+
+    /* header */
+    .header{
+        padding-top: 0;
+    }
+    
+    .header > div > div{
+        position: static;
+        width: 100%;
+        padding: 2rem 4rem; 
+        justify-content: space-between;
+        gap: 0px;
+    }
+    
+    /* section easygencert*/
+    .section-easygencert-grid{
+        max-width: 100%;
+        padding: 4rem;
+        grid-template-areas:
+        "cta"
+        "format";
+        column-gap: 0px;
+        row-gap: 64px;
+        justify-items: center;
+    }
+
+    .cta{
+        text-align: center;
+    }
+    
+    .cta p {
+        max-width: 100%;
+    }
+
+    #section-easygencert img{
+        max-width: 600px;
+    }
+    
+    /* section about */
+    .section-about-grid{
+        max-width: 100%;
+        padding: 4rem;
+        grid-template-areas: 
+        "title"
+        "image" 
+        "projectinfo";
+        column-gap: 0px;
+        row-gap: 44px;
+    }
+
+    #section-about h2{
+        margin-bottom: 34px;
+    }
+    
+    #section-about img {
+        max-width: 600px;
+    }
+    
+    .project-info{
+        max-width: 600px;
+        text-align: center;
+    }
+    
+    #link-repository{
+        margin: 0 auto;
+    }
+}
+
+@media(max-width: 680px){
+    /* header */
+    .header > div > div{
+        padding: 2rem; 
+    }
+
+    /* section easygencert */
+    .section-easygencert-grid{
+        padding: 2rem;
+    }
+    
+    .cta h1{
+        font-size: 1.5em;
+    }
+    
+    .cta p {
+        font-size: 1em;
+    }
+    
+    .cta button {
+        font-size: 1em;
+    }
+
+    #section-easygencert img{
+        max-width: 100%;
+    }
+    
+    /* section about */
+    .section-about-grid{
+        padding: 2rem;
+    }
+
+    #section-about h2{
+        font-size: 1.475em;
+    }
+
+    #section-about img {
+        max-width: 100%;
+    }
+    
+    .project-info{
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .project-info h3{
+        font-size: 1.375em;
+    }
+    
+    #link-repository{
+        margin: 0 auto;
+    }
+    
 }
