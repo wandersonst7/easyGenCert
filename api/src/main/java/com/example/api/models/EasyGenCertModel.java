@@ -6,7 +6,7 @@ public class EasyGenCertModel {
     private String courseName;
     private String issuingOrganization;
     private int workloads;
-    private int dateOfIssueMonth;
+    private String dateOfIssueMonth;
     private int dateOfIssueYear;
     private String certificateType;
 
@@ -42,11 +42,11 @@ public class EasyGenCertModel {
         this.workloads = workloads;
     }
 
-    public int getDateOfIssueMonth() {
+    public String getDateOfIssueMonth() {
         return dateOfIssueMonth;
     }
 
-    public void setDateOfIssueMonth(int dateOfIssueMonth) {
+    public void setDateOfIssueMonth(String dateOfIssueMonth) {
         this.dateOfIssueMonth = dateOfIssueMonth;
     }
 
@@ -65,4 +65,5 @@ public class EasyGenCertModel {
     public void setCertificateType(String certificateType) {
         this.certificateType = certificateType;
     }
+
 }

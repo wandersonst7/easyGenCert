@@ -69,3 +69,4 @@ public class GenerateEasyGenCertImpl implements GenerateEasyGenCertService {
         }
     }
 }
+

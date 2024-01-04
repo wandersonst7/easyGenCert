@@ -11,28 +11,28 @@ const Modal = ({ closeModal, handleGenerate, loading, message }) => {
     const [year, setYear] = useState("");
     const [certificateType, setCertificateType] = useState(0);
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-
+      
         let certificateTypeString;
-
-        // Posteriormente vamos aplicar uma função para validar todos os campos... Por enquanto é isso.
-        if(certificateType === 1){
-            certificateTypeString = "Conclusão"
+      
+        if (certificateType === 1) {
+          certificateTypeString = "Conclusão";
         }
-
+      
         const data = {
-            student,
-            course,
-            org,
-            workload,
-            month,
-            year,
-            certificateTypeString
-        }
-
-        handleGenerate(data)
-    }
+          studentName: student,
+          courseName: course,
+          issuingOrganization: org,
+          workloads: parseInt(workload),
+          dateOfIssueMonth: month,
+          dateOfIssueYear: parseInt(year),
+          certificateType: certificateTypeString,
+        };
+      
+        handleGenerate(data);
+      };
+      
 
   return (
     <div>
@@ -41,7 +41,7 @@ const Modal = ({ closeModal, handleGenerate, loading, message }) => {
             { !loading ? (
                 <>
                 <h2>Informações</h2>
-                {message && <p>{message}</p>}
+                {message && <p>{message.msg}</p>}
                 <form onSubmit={ handleSubmit }>
                     <div className="modal-grid">
                         <div className="student">

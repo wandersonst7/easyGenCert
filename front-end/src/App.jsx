@@ -1,9 +1,5 @@
 import './App.css'
-
-// Components
 import Modal from './components/Modal';
-
-// Icons
 import { HiMiniArrowUpRight } from "react-icons/hi2";
 import { FiGithub } from "react-icons/fi";
 import { useState } from 'react';
@@ -11,12 +7,43 @@ import { useState } from 'react';
 function App() {
 
   const [loading, setLoading] = useState(false);
-  const [message, setMessage] = useState("Mensagem de erro se houver");
+  const [message, setMessage] = useState(null);
   
   const handleGenerate = async(data) => {
-    console.log(data)
+    try {
+      setLoading(true);
+      const response = await fetch('http://localhost:8080/generate-pdf', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+        responseType: 'arraybuffer',
+      });
+  
+      if (response.status === 200) {
+        const pdfData = await response.arrayBuffer();
+        const blob = new Blob([pdfData], { type: 'application/pdf' });
+        const url = window.URL.createObjectURL(blob);
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = 'certificado.pdf';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        window.URL.revokeObjectURL(url);
+        setMessage({ msg: 'O certificado foi gerado com sucesso', type: 'success' });
+        setLoading(false);
+      } else {
+        throw new Error('Erro com o servidor');
+      }
+    } catch (error) {
+      console.error('Error generating PDF:', error);
+      setMessage({ msg: 'Não foi possível gerar o certificado.', type: 'error' });
+    } finally {
+      setLoading(false);
+    }
 
-    // Requisição
   }
 
   const closeModal = () => {
