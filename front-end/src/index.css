@@ -9,6 +9,19 @@ html, body {
     min-height: 100vh;
 }
 
+label{
+    font-weight: bold;
+}
+
+input, select{
+    margin-top: 8px;
+    outline: none;
+    border: 1px solid #ccc;
+    padding: 1em;
+    width: 100%;
+    border-radius: 16px;
+}
+
 a{
     text-decoration: none;
 }
@@ -35,4 +48,18 @@ h2 {
 
 h1 {
     font-size: 3em;
+}
+
+@media(max-width: 680px){
+    h3 {
+        font-size: 1.375em;
+    }
+    
+    h2 {
+        font-size: 1.475em;
+    }
+    
+    h1 {
+        font-size: 1.5em;
+    }
 }

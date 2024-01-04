@@ -1,3 +1,7 @@
+.hide{
+    opacity: 0;
+}
+
 /* header */
 .header{
     background-color: #F7EBE8;
@@ -253,10 +257,6 @@
         padding: 2rem;
     }
     
-    .cta h1{
-        font-size: 1.5em;
-    }
-    
     .cta p {
         font-size: 1em;
     }
@@ -274,10 +274,6 @@
         padding: 2rem;
     }
 
-    #section-about h2{
-        font-size: 1.475em;
-    }
-
     #section-about img {
         max-width: 100%;
     }
@@ -285,10 +281,6 @@
     .project-info{
         max-width: 100%;
         text-align: center;
-    }
-
-    .project-info h3{
-        font-size: 1.375em;
     }
     
     #link-repository{

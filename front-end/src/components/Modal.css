@@ -1,0 +1,134 @@
+#modal, #fade{
+    transition: .5s;
+    opacity: 1;
+    pointer-events: all;
+}
+
+#modal.hide, #fade.hide{
+    opacity: 0;
+    pointer-events: none;
+}
+
+#fade{
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background: rgba(0 , 0, 0, .5);
+    z-index: 5;
+}
+
+#modal {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    padding: 44px;
+    border-radius: 24px;
+    background-color: #fff;
+    color: #23304A;
+    width: 768px;
+    min-height: 580px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#modal.hide{
+    top: 0;
+}
+
+.loading {
+    
+}
+
+.modal-grid{
+    margin: 34px 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+    "student course"
+    "org workload"
+    "dateOfIssue dateOfIssue"
+    "certificateType certificateType";
+    gap: 24px;
+}
+
+.student{
+    grid-area: student;
+}
+
+.course{
+    grid-area: course;
+}
+
+.org{
+    grid-area: org;
+}
+
+.workload{
+    grid-area: workload;
+}
+
+.dateOfIssue{
+    grid-area: dateOfIssue;
+}
+
+.dateOfIssue-inputs{
+    display: flex;
+    gap: 24px;
+}
+
+.certificateType{
+    grid-area: certificateType;
+}
+
+.buttons-modal{
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    width: 100%;
+}
+
+#cancel, #generate{
+    padding: 1em;
+    font-weight: bold;
+    border-radius: 100px;
+    border: 1px solid #23304A;
+    width: 150px;
+    cursor: pointer;
+    transition: .5s;
+}
+
+#cancel:hover{
+    background-color: #F7EBE8;
+}
+
+#generate{
+    background-color: #23304A;
+    color: #fff;
+    opacity: .9;
+}
+
+#generate:hover{
+    opacity: 1;
+}
+
+@media(max-width: 768px){
+    #modal {
+        width: 100%;
+    }
+    
+    .modal-grid{
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "student" 
+        "course"
+        "org" 
+        "workload"
+        "dateOfIssue"
+        "certificateType";
+    }
+    
+}
