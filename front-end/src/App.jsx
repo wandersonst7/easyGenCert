@@ -75,7 +75,7 @@ function App() {
 
             <h6>Criadores:</h6>
             <div className="creators">
-              <a href="#" target="_blank" rel="noopener noreferrer">David <HiMiniArrowUpRight /></a>
+              <a href="https://www.linkedin.com/in/davidcaua" target="_blank" rel="noopener noreferrer">David <HiMiniArrowUpRight /></a>
               <a href="https://www.linkedin.com/in/wandersonst7" target="_blank" rel="noopener noreferrer">Wanderson <HiMiniArrowUpRight /></a>
             </div>
 
