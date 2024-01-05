@@ -50,7 +50,7 @@ const Modal = ({ closeModal, handleGenerate, loading, message }) => {
             { !loading ? (
                 <>
                 <h2>Informações</h2>
-                {message && <p>{message.msg}</p>}
+                {message && <p className={message.type}>{message.msg}</p>}
                 <form onSubmit={ handleSubmit }>
                     <div className="modal-grid">
                         <div className="student">

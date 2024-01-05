@@ -23,6 +23,24 @@ input, select{
     border-radius: 16px;
 }
 
+.error, .success{
+    text-align: center;
+    padding: 8px 10px;
+    border-radius: 8px;
+}
+
+.error{
+    color: rgb(75, 13, 13);
+    background-color: rgb(253, 209, 209);
+    border: 1px solid rgb(243, 139, 139);
+}
+
+.success{
+    color: rgb(13, 75, 13);
+    background-color: rgb(209, 253, 209);
+    border: 1px solid rgb(139, 243, 139);
+}
+
 a{
     text-decoration: none;
 }

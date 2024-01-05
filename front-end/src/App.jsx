@@ -32,7 +32,7 @@ function App() {
         link.click();
         document.body.removeChild(link);
         window.URL.revokeObjectURL(url);
-        setMessage({ msg: 'O certificado foi gerado com sucesso', type: 'success' });
+        setMessage({ msg: 'O certificado foi gerado com sucesso.', type: 'success' });
         setLoading(false);
       } else {
         throw new Error('Erro com o servidor');
