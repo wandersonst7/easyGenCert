@@ -1,13 +1,24 @@
 package com.example.api.models;
 
 
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+
 public class EasyGenCertModel {
+
+    @NotBlank(message = "O nome do estudante não pode estar em branco.")
     private String studentName;
+    @NotBlank(message = "O nome do curso não pode estar em branco.")
     private String courseName;
+    @NotBlank(message = "A organização emissora não pode estar em branco.")
     private String issuingOrganization;
-    private int workloads;
+    @NotNull(message = "A carga horária não pode ser nulo.")
+    private Integer workloads;
+    @NotBlank(message = "O mês de emissão não pode estar em branco.")
     private String dateOfIssueMonth;
-    private int dateOfIssueYear;
+    @NotNull(message = "O ano de emissão não pode ser nulo.")
+    private Integer dateOfIssueYear;
+    @NotBlank(message = "O tipo de certificado não pode estar em branco.")
     private String certificateType;
 
     public String getStudentName() {
@@ -34,11 +45,11 @@ public class EasyGenCertModel {
         this.issuingOrganization = issuingOrganization;
     }
 
-    public int getWorkloads() {
+    public Integer getWorkloads() {
         return workloads;
     }
 
-    public void setWorkloads(int workloads) {
+    public void setWorkloads(Integer workloads) {
         this.workloads = workloads;
     }
 
@@ -50,11 +61,11 @@ public class EasyGenCertModel {
         this.dateOfIssueMonth = dateOfIssueMonth;
     }
 
-    public int getDateOfIssueYear() {
+    public Integer getDateOfIssueYear() {
         return dateOfIssueYear;
     }
 
-    public void setDateOfIssueYear(int dateOfIssueYear) {
+    public void setDateOfIssueYear(Integer dateOfIssueYear) {
         this.dateOfIssueYear = dateOfIssueYear;
     }
 
@@ -65,5 +76,4 @@ public class EasyGenCertModel {
     public void setCertificateType(String certificateType) {
         this.certificateType = certificateType;
     }
-
 }
