@@ -2,115 +2,105 @@
 <head>
     <title>Certificado</title>
     <style>
+
+        @page { 
+            size: landscape; 
+        }
+
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
         body {
             background-color: #fff;
-            color: #141414;
+            color: #4d4d4d;
             font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            height: 680px;
+            width: 100%;
+            display: table;
         }
 
-        h1 {
-            font-size: 28px;
-            margin-top: 0;
-            margin-bottom: 8px;
+        .container{
+            height: 100%;
+            border: 10px ridge #0494FC;
+            text-transform: uppercase;
+            display: table-cell;
+            vertical-align: middle;
+            background-color: #f8f8f8;
         }
 
-        h2 {
-            font-size: 16px;
-            padding-bottom: 4px;
-            border: none;
-            border-bottom: 1px solid #ccc;
+        .table{
+            width: 600px;
+            margin: 0 auto;
         }
 
-        p {
-            margin: 0;
-            font-size: 14px;
+        .primary{
+            text-align: center;
+            width: 600px;
+            margin: 0 auto;
         }
 
-        ul {
-            padding-left: 0;
+        .primary h1{
+            margin-bottom: 34px;
         }
 
-        li {
-            list-style-type: none;
-            font-size: 14px;
+        .primary h2{
+            margin-bottom: 34px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #0262A8;
         }
 
-        li + li {
-            margin: 8px 0;
+        .primary h3{
+            margin-bottom: 34px;
         }
 
-        .contatoendereco {
-            margin-bottom: 20px;
+        .primary p{
+            margin-bottom: 34px;
         }
 
-        .contatoendereco p {
-            font-size: 14px;
-        }
-
-        .contatoendereco span {
+        .secondary {
             font-weight: bold;
         }
 
-        .habilidades {
-            font-weight: bold;
+        .text{
+            width: 450px;
+            word-wrap: break-word;
         }
 
-        .objetivo {
-            margin-bottom: 20px;
+        .date{
+            width: 300px;
         }
 
-        .objetivo p {
-            font-size: 14px;
-        }
-
-        .formacao {
-            margin-bottom: 20px;
-        }
-
-        .projetos {
-            margin-bottom: 20px;
+        span{
+            color: #0262A8;
         }
 
     </style>
 </head>
 <body>
-<h1>{STUDENTNAME}</h1>
-<div class="contatoendereco">
-    {COURSENAME}
-</div>
-
-<div class="objetivo">
-    <h2>Testando ISSUINGORGANIZATION</h2>
-    <p>{ISSUINGORGANIZATION}</p>
-</div>
-
-<div class="habilidades">
-    <h2>testando WORKLOADS</h2>
-    <ul>
-        {WORKLOADS}
-    </ul>
-</div>
-
-<div class="experiencia">
-    <h2>testando DATEOFISSUEMONTH</h2>
-    <ul>
-        {DATEOFISSUEMONTH}
-    </ul>
-</div>
-
-<div class="formacao">
-    <h2>testando DATEOFISSUEYEAR</h2>
-    <ul>
-        {DATEOFISSUEYEAR}
-    </ul>
-</div>
-
-<div class="projetos">
-    <h2>testando CERTIFICATETYPE</h2>
-    <ul>
-        {CERTIFICATETYPE}
-    </ul>
-</div>
-
+    <div class="container">
+        <table class="table">
+            <tr class="primary">
+                <td colspan="2">
+                    <h1>Certificado de {CERTIFICATETYPE}</h1>
+                    <h3>Certificamos que o aluno</h3>
+                    <h2>{STUDENTNAME}</h2>
+                </td>
+            </tr>
+            <tr class="secondary">
+                <td class="text">
+                    <p>Concluiu o curso <span>{COURSENAME}</span> certificado pela <span>{ISSUINGORGANIZATION}</span> com carga horária de <span>{WORKLOADS} hora (s)</span>.</p>
+                </td>
+                <td class="date">
+                    <p>EMITIDO EM:
+                        <span>{DATEOFISSUEMONTH}</span>
+                            de
+                        <span>{DATEOFISSUEYEAR}</span>
+                    </p>
+                </td>
+            </tr>
+        </table>
+    </div>
 </body>
 </html>
