@@ -8,6 +8,12 @@ function App() {
 
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState(null);
+
+  const clearMessage = () => {
+    setTimeout(() => {
+      setMessage("")
+    }, 2000)
+  }
   
   const handleGenerate = async(data) => {
     try {
@@ -42,6 +48,8 @@ function App() {
     } finally {
       setLoading(false);
     }
+
+    clearMessage();
 
   }
 
