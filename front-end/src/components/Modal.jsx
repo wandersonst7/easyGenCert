@@ -31,8 +31,17 @@ const Modal = ({ closeModal, handleGenerate, loading, message }) => {
         };
       
         handleGenerate(data);
-      };
-      
+    };
+
+    const clearStates = () => {
+        setStudent("")
+        setCourse("")
+        setOrg("");
+        setWorkload("");
+        setMonth("");
+        setYear("");
+        setCertificateType(0);
+    }
 
   return (
     <div>
@@ -100,7 +109,7 @@ const Modal = ({ closeModal, handleGenerate, loading, message }) => {
                         </div>
                     </div>
                     <div className="buttons-modal">
-                        <button type="button" id="cancel" onClick={() => closeModal()}>CANCELAR</button>
+                        <button type="button" id="cancel" onClick={() => { closeModal(); clearStates(); }}>CANCELAR</button>
                         <button id="generate">GERAR</button>
                     </div>
                 </form>

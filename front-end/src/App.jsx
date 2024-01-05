@@ -38,7 +38,6 @@ function App() {
         throw new Error('Erro com o servidor');
       }
     } catch (error) {
-      console.error('Error generating PDF:', error);
       setMessage({ msg: 'Não foi possível gerar o certificado.', type: 'error' });
     } finally {
       setLoading(false);
