@@ -41,6 +41,15 @@ input, select{
     border: 1px solid rgb(139, 243, 139);
 }
 
+.validation-input{
+    border-color: #ee5555;
+}
+
+.validation-message{
+    font-weight: bold;
+    color: #ee5555;
+}
+
 a{
     text-decoration: none;
 }
